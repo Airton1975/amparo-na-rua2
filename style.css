@@ -1,883 +1,173 @@
-/* ===============================
-   ESTILO GERAL
-   =============================== */
-:root {
-  --cor-principal: #0056b3;      /* Azul escuro profissional */
-  --cor-secundaria: #007bff;     /* Azul de apoio */
-  --cor-fundo: #f4f6f8;          /* Fundo neutro suave */
-  --cor-secao: #0056b3;          /* Fundo das seções */
-  --cor-texto: #ffffff;          /* Texto branco */
-  --cor-titulo: #ffd700;         /* Títulos amarelos */
-  --cor-link-fundo: #000000;     /* Fundo preto dos links */
-  --cor-link-texto: #ffd700;     /* Amarelo ouro para texto */
-  --cor-destaque: #ffb347;       /* Laranja para hover */
-  --cor-branca: #ffffff;
-  --fonte-principal: "Segoe UI", Roboto, sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Geral */
 body {
-  font-family: var(--fonte-principal);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  line-height: 1.7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ADD8E6; /* Azul claro no fundo da página */
 }
 
-/* ===============================
-   CABEÇALHO
-   =============================== */
+/* Cabeçalho */
 header {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
-
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-/* ===============================
-   LINKS DO MENU DE NAVEGAÇÃO (TOPO)
-   =============================== */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-nav a {
-  display: inline-block;
-  background-color: var(--cor-link-fundo); /* Fundo preto */
-  color: var(--cor-link-texto);            /* Letras amarelas */
-  text-decoration: none;
-  padding: 10px 20px;                      /* Botão confortável */
-  border-radius: 999px;                     /* Cantos totalmente arredondados */
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-nav a:hover {
-  background-color: var(--cor-branca);     /* Inverte cores no hover */
-  color: var(--cor-principal);             /* Texto azul escuro */
-  border-color: var(--cor-link-fundo);     /* Mantém borda preta */
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   CONTEÚDO PRINCIPAL
-   =============================== */
-main {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-section {
-  background-color: var(--cor-secao);
-  color: var(--cor-texto);
-  border-radius: 8px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-}
-
-section h2 {
-  color: var(--cor-titulo); /* Títulos amarelos */
-  margin-bottom: 15px;
-  border-left: 5px solid var(--cor-secundaria);
-  padding-left: 10px;
-  font-size: 1.8rem; /* Títulos maiores */
-}
-
-section p {
-  margin-bottom: 20px; /* Espaço entre texto e links */
-  font-size: 1.1rem; /* Texto maior */
-}
-
-/* ===============================
-   LINKS DAS SEÇÕES (BOTÕES)
-   =============================== */
-section a {
-  display: inline-block;
-  background-color: var(--cor-link-fundo); /* Fundo preto */
-  color: var(--cor-link-texto);            /* Letras amarelas */
-  text-decoration: none;
-  padding: 14px 32px;                     /* Botão maior */
-  border-radius: 999px;                    /* Cantos totalmente arredondados (pílula) */
-  font-weight: 700;
-  font-size: 1.2rem;                       /* Fonte maior */
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  margin-top: 15px;                        /* Espaço extra entre o texto e o botão */
-}
-
-section a:hover {
-  background-color: var(--cor-branca);     /* Inverte no hover */
-  color: var(--cor-principal);             /* Texto azul escuro */
-  border-color: var(--cor-link-fundo);     /* Borda preta */
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   LISTAS
-   =============================== */
-ul {
-  margin-left: 20px;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-
-/* ===============================
-   CONTATO
-   =============================== */
-#contato ul {
-  list-style: none;
-  margin-left: 0;
-}
-
-#contato li {
-  margin-bottom: 8px;
-}
-
-#contato a {
-  background: none;
-  color: var(--cor-link-texto);
-  text-decoration: underline;
-  padding: 0;
-  border-radius: 0;
-}
-
-#contato a:hover {
-  color: var(--cor-destaque);
-}
-
-/* ===============================
-   RODAPÉ
-   =============================== */
-footer {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
-
-footer a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--cor-branca);
-  text-decoration: underline;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: var(--cor-secundaria);
-}
-
-/* ===============================
-   RESPONSIVIDADE
-   =============================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  section {
+    background-color: #000; /* Fundo preto */
+    color: #FFD700; /* Letra amarela */
     padding: 20px;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  section h2 {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 1rem;
-  }
-
-  section a {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ===============================
-   ESTILO GERAL
-   =============================== */
-:root {
-  --cor-principal: #0056b3;      /* Azul escuro profissional */
-  --cor-secundaria: #007bff;     /* Azul de apoio */
-  --cor-fundo: #f4f6f8;          /* Fundo neutro suave */
-  --cor-secao: #0056b3;          /* Fundo das seções */
-  --cor-texto: #ffffff;          /* Texto branco */
-  --cor-titulo: #ffd700;         /* Títulos amarelos */
-  --cor-link-fundo: #000000;     /* Fundo preto dos links */
-  --cor-link-texto: #ffd700;     /* Amarelo ouro para texto */
-  --cor-destaque: #ffb347;       /* Laranja para hover */
-  --cor-branca: #ffffff;
-  --fonte-principal: "Segoe UI", Roboto, sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--fonte-principal);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  line-height: 1.7;
-}
-
-/* ===============================
-   CABEÇALHO
-   =============================== */
-header {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    text-align: center; /* Centraliza título e links */
 }
 
 header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+    margin: 0 0 10px 0; /* Espaço abaixo do título */
 }
 
-/* ===============================
-   LINKS DO MENU DE NAVEGAÇÃO (TOPO)
-   =============================== */
+/* Menu de navegação */
 nav ul {
-  list-style: none;
-  display: flex;             /* Flexbox para menu */
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex; /* Alinha horizontalmente e centraliza */
 }
 
-nav a {
-  display: inline-block;
-  background-color: var(--cor-link-fundo);
-  color: var(--cor-link-texto);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 999px; /* Cantos totalmente arredondados */
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+nav ul li {
+    margin: 0 10px; /* Espaçamento entre links */
 }
 
-nav a:hover {
-  background-color: var(--cor-branca);
-  color: var(--cor-principal);
-  transform: translateY(-2px);
+nav ul li a {
+    text-decoration: none;
+    color: #FFD700; /* Letra amarela */
+    background-color: #000; /* Fundo preto */
+    padding: 8px 15px; /* Um pouco maior para destaque */
+    border-radius: 50px; /* Cantos totalmente arredondados */
+    font-size: 1.1em; /* Aumenta levemente o tamanho da fonte */
 }
 
-/* ===============================
-   CONTEÚDO PRINCIPAL
-   =============================== */
-main {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
+/* Hover do menu */
+nav ul li a:hover {
+    background-color: #333; /* Leve efeito ao passar o mouse */
 }
 
-article {
-  background-color: var(--cor-secao);
-  color: var(--cor-texto);
-  border-radius: 8px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-}
-
-article h2 {
-  color: var(--cor-titulo); /* Títulos amarelos */
-  margin-bottom: 15px;
-  border-left: 5px solid var(--cor-secundaria);
-  padding-left: 10px;
-  font-size: 1.8rem;
-}
-
-article h3 {
-  color: var(--cor-titulo);
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-article p {
-  margin-bottom: 20px; /* Espaço entre texto e links */
-  font-size: 1.1rem; /* Texto maior */
-}
-
-article img {
-  margin-top: 15px;
-  max-width: 100%;
-  border-radius: 8px;
-  display: block;
-}
-
-/* ===============================
-   LINKS E BOTÕES NAS SEÇÕES
-   =============================== */
-article a, .botao-doar {
-  display: inline-block;
-  background-color: var(--cor-link-fundo);
-  color: var(--cor-link-texto);
-  text-decoration: none;
-  padding: 14px 32px;
-  border-radius: 999px; /* Cantos totalmente arredondados */
-  font-weight: 700;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  margin-top: 15px; /* Espaço entre texto e botão */
-}
-
-article a:hover, .botao-doar:hover {
-  background-color: var(--cor-branca);
-  color: var(--cor-principal);
-  border-color: var(--cor-link-fundo);
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   LISTAS
-   =============================== */
-ul {
-  margin-left: 20px;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-
-/* ===============================
-   RODAPÉ
-   =============================== */
-footer {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
-
-footer a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--cor-branca);
-  text-decoration: underline;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: var(--cor-secundaria);
-}
-
-/* ===============================
-   RESPONSIVIDADE
-   =============================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  article {
+/* Seções */
+section, article {
+    background-color: #003366; /* Azul mais escuro */
+    color: #fff; /* Letra branca para contraste */
     padding: 20px;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  article h2 {
-    font-size: 1.6rem;
-  }
-
-  article h3 {
-    font-size: 1.3rem;
-  }
+    margin: 10px auto;
+    max-width: 1000px;
+    border-radius: 8px;
 }
 
-@media (max-width: 480px) {
-  body {
-    font-size: 1rem;
-  }
-
-  article a, nav a {
-    width: 100%;
-    text-align: center;
-  }
+/* Títulos das seções */
+section h2, article h2, section h3, article h3 {
+    color: #FFD700; /* Amarelo */
 }
 
-/* ===============================
-   ESTILO GERAL
-   =============================== */
-:root {
-  --cor-principal: #0056b3;      /* Azul escuro profissional */
-  --cor-secundaria: #007bff;     /* Azul de apoio */
-  --cor-fundo: #f4f6f8;          /* Fundo neutro suave */
-  --cor-secao: #0056b3;          /* Fundo das seções */
-  --cor-texto: #ffffff;          /* Texto branco */
-  --cor-titulo: #ffd700;         /* Títulos amarelos */
-  --cor-link-fundo: #000000;     /* Fundo preto dos links */
-  --cor-link-texto: #ffd700;     /* Amarelo ouro para texto */
-  --cor-branca: #ffffff;
-  --fonte-principal: "Segoe UI", Roboto, sans-serif;
+/* Links dentro das seções */
+section a, article a {
+    display: inline-block; /* Faz o link ter seu próprio bloco */
+    margin-top: 10px; /* Distância do texto acima */
+    color: #FFD700; /* Amarelo */
+    background-color: #000; /* Fundo preto */
+    padding: 10px 20px; /* Maior para destaque */
+    border-radius: 50px; /* Cantos totalmente arredondados */
+    text-decoration: none;
+    font-size: 1.2em; /* Um pouco maior */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Hover dos links nas seções */
+section a:hover, article a:hover {
+    background-color: #333;
 }
 
-body {
-  font-family: var(--fonte-principal);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  line-height: 1.7;
+/* Listas de profissões */
+ul.profissoes {
+    list-style: none; /* Remove bolinhas padrão */
+    padding-left: 20px;
 }
 
-/* ===============================
-   CABEÇALHO
-   =============================== */
-header {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+ul.profissoes li {
+    color: #fff;
+    position: relative;
+    padding-left: 25px; /* Espaço para a bolinha */
 }
 
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+ul.profissoes li::before {
+    content: "●"; /* Bolinha */
+    color: black; /* Bolinha preta */
+    position: absolute;
+    left: 0;
 }
 
-/* ===============================
-   LINKS DO MENU DE NAVEGAÇÃO (TOPO)
-   =============================== */
-nav ul {
-  list-style: none;
-  display: flex;             /* Flexbox para menu */
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-nav a {
-  display: inline-block;
-  background-color: var(--cor-link-fundo);
-  color: var(--cor-link-texto);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 999px; /* Cantos totalmente arredondados */
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-nav a:hover {
-  background-color: var(--cor-branca);
-  color: var(--cor-principal);
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   CONTEÚDO PRINCIPAL
-   =============================== */
-main {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-article {
-  background-color: var(--cor-secao);
-  color: var(--cor-texto);
-  border-radius: 8px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-}
-
-article h2 {
-  color: var(--cor-titulo); /* Títulos amarelos */
-  margin-bottom: 15px;
-  border-left: 5px solid var(--cor-secundaria);
-  padding-left: 10px;
-  font-size: 1.8rem;
-}
-
-article h3 {
-  color: var(--cor-titulo);
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-article p {
-  margin-bottom: 20px; /* Espaço entre texto e links */
-  font-size: 1.1rem; /* Texto maior */
-}
-
-article img {
-  margin-top: 15px;
-  max-width: 100%;
-  border-radius: 8px;
-  display: block;
-}
-
-/* ===============================
-   LINKS E BOTÕES NAS SEÇÕES
-   =============================== */
-article a, .botao-doar {
-  display: inline-block;
-  background-color: var(--cor-link-fundo);
-  color: var(--cor-link-texto);
-  text-decoration: none;
-  padding: 14px 32px;
-  border-radius: 999px; /* Cantos totalmente arredondados */
-  font-weight: 700;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  margin-top: 15px; /* Espaço entre texto e botão */
-}
-
-article a:hover, .botao-doar:hover {
-  background-color: var(--cor-branca);
-  color: var(--cor-principal);
-  border-color: var(--cor-link-fundo);
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   LISTAS
-   =============================== */
-ul {
-  margin-left: 20px;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-
-/* ===============================
-   RODAPÉ
-   =============================== */
-footer {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
-
-footer a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--cor-branca);
-  text-decoration: underline;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: var(--cor-secundaria);
-}
-
-/* ===============================
-   RESPONSIVIDADE
-   =============================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  article {
-    padding: 20px;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  article h2 {
-    font-size: 1.6rem;
-  }
-
-  article h3 {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 1rem;
-  }
-
-  article a, nav a {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ===============================
-   ESTILO GERAL
-   =============================== */
-:root {
-  --cor-principal: #0056b3;      /* Azul escuro profissional */
-  --cor-secundaria: #007bff;     /* Azul de apoio */
-  --cor-fundo: #f4f6f8;          /* Fundo neutro */
-  --cor-secao: #0056b3;          /* Fundo das seções */
-  --cor-texto: #ffffff;          /* Texto branco */
-  --cor-titulo: #ffd700;         /* Títulos amarelos */
-  --cor-link-fundo: #000000;     /* Fundo preto dos links e botões */
-  --cor-link-texto: #ffd700;     /* Texto amarelo dos links e botões */
-  --cor-branca: #ffffff;
-  --fonte-principal: "Segoe UI", Roboto, sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--fonte-principal);
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  line-height: 1.7;
-}
-
-/* ===============================
-   CABEÇALHO
-   =============================== */
-header {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
-
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-/* ===============================
-   MENU DE NAVEGAÇÃO
-   =============================== */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-nav a {
-  display: inline-block;
-  background-color: var(--cor-link-fundo);
-  color: var(--cor-link-texto);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-nav a:hover {
-  background-color: var(--cor-branca);
-  color: var(--cor-principal);
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   CONTEÚDO PRINCIPAL / FORMULÁRIO
-   =============================== */
-main {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
+/* Formulários */
 form {
-  background-color: var(--cor-secao);
-  color: var(--cor-texto);
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    max-width: 900px; /* Maior para preencher horizontalmente */
+    margin: 20px auto;
+    background-color: #004080; /* Fundo azul escuro */
+    padding: 30px;
+    border-radius: 8px;
+    color: #fff;
 }
 
 fieldset {
-  border: 2px solid var(--cor-secundaria);
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 25px;
+    border: 1px solid #fff;
+    margin-bottom: 15px;
+    padding: 15px;
 }
 
 legend {
-  font-weight: bold;
-  color: var(--cor-titulo);
-  font-size: 1.4rem;
-  padding: 0 10px;
+    font-weight: bold;
+    color: #FFD700; /* Amarelo */
 }
 
-/* Labels e Inputs */
 label {
-  font-weight: 600;
-  color: var(--cor-branca);
+    display: block;
+    margin-bottom: 5px;
 }
 
 input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
-input:focus, select:focus, textarea:focus {
-  outline: 2px solid var(--cor-titulo);
-  background-color: #e8f0ff;
-  color: #000;
+/* Botão enviar cadastro */
+button#enviarCadastro {
+    display: block;              /* Mantém o botão como bloco */
+    margin: 40px auto;           /* Centraliza e afasta do conteúdo acima */
+    background-color: #000;      /* Fundo preto */
+    color: #FFD700;              /* Letras amarelas */
+    padding: 20px 40px;          /* Tamanho maior para destaque */
+    border-radius: 50px;         /* Cantos totalmente arredondados */
+    border: none;                /* Remove borda padrão */
+    font-size: 1.5em;            /* Fonte maior */
+    font-weight: bold;           /* Destaque no texto */
+    text-align: center;          /* Centraliza o texto */
+    cursor: pointer;             /* Muda o cursor ao passar o mouse */
+    text-decoration: none;       /* Remove sublinhado se for link */
+    transition: background 0.3s; /* Suaviza efeito hover */
 }
 
-/* ===============================
-   BOTÕES / LINKS
-   =============================== */
-button, a, .botao-doar {
-  display: inline-block;
-  background-color: var(--cor-link-fundo);
-  color: var(--cor-link-texto);
-  text-decoration: none;
-  padding: 14px 32px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  margin-top: 15px;
-  cursor: pointer;
+button#enviarCadastro:hover {
+    background-color: #333;      /* Leve efeito escuro ao passar o mouse */
 }
 
-button:hover, a:hover, .botao-doar:hover {
-  background-color: var(--cor-branca);
-  color: var(--cor-principal);
-  border-color: var(--cor-link-fundo);
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   TEXTO E TÍTULOS
-   =============================== */
-h2, h3 {
-  color: var(--cor-titulo);
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-}
-
-/* ===============================
-   RODAPÉ
-   =============================== */
+/* Rodapé */
 footer {
-  background-color: var(--cor-principal);
-  color: var(--cor-branca);
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 40px;
-  font-size: 0.9rem;
+    background-color: #000;
+    color: #FFD700;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
 }
 
+/* Link "Voltar ao topo" */
 footer a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--cor-branca);
-  text-decoration: underline;
-  transition: color 0.3s;
+    color: #FFD700;
+    background-color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 footer a:hover {
-  color: var(--cor-secundaria);
+    background-color: #333;
 }
-
-/* ===============================
-   RESPONSIVIDADE
-   =============================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  form {
-    padding: 20px;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  legend {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  input, select, textarea {
-    font-size: 1rem;
-  }
-
-  button, nav a {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-
