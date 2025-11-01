@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Formulário de cadastro de voluntários e doadores da ONG Amparo na Rua.">
-  <link rel="stylesheet" href="style.css"> <!-- Verifique se o caminho do CSS está correto -->
+  <link rel="stylesheet" href="style.css">
   <title>Cadastro de Voluntários e Doadores - Amparo na Rua</title>
 </head>
 <body>
@@ -124,13 +124,19 @@
 
       <p>Escolha como deseja colaborar:</p>
 
-      <p>
-        <input type="radio" id="voluntario" name="tipo_colaboracao" value="voluntario" required>
-        <label for="voluntario">Voluntário</label><br>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="tipo_colaboracao" value="voluntario" required>
+          Voluntário
+        </label>
+      </div>
 
-        <input type="radio" id="doacao" name="tipo_colaboracao" value="doacao" required>
-        <label for="doacao">Doações</label>
-      </p>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="tipo_colaboracao" value="doacao" required>
+          Doações
+        </label>
+      </div>
 
       <p>
         <label for="habilidades">Caso seja voluntário, informe suas habilidades (opcional):</label><br>
@@ -160,8 +166,13 @@
 
 <footer>
   <p>&copy; 2025 Amparo na Rua</p>
-  
-
+  <p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="CSS válido!" />
+    </a>
+</p>
 </footer>
 
 </body>

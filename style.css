@@ -3,19 +3,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ADD8E6; /* Azul claro no fundo da página */
+    background-color: hsl(224, 53%, 79%); /* Azul claro no fundo da página */
 }
 
 /* Cabeçalho */
 header {
     background-color: #000; /* Fundo preto */
     color: #FFD700; /* Letra amarela */
-    padding: 20px;
-    text-align: center; /* Centraliza título e links */
+    padding: 30px;
+    text-align: center;
 }
 
 header h1 {
-    margin: 0 0 10px 0; /* Espaço abaixo do título */
+    margin: 0 0 20px 0;
 }
 
 /* Menu de navegação */
@@ -23,85 +23,109 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: inline-flex; /* Alinha horizontalmente e centraliza */
+    display: inline-flex;
 }
 
 nav ul li {
-    margin: 0 10px; /* Espaçamento entre links */
+    margin: 0 10px;
+    position: relative; /* necessário para a bolinha pulsante */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #FFD700; /* Letra amarela */
-    background-color: #000; /* Fundo preto */
-    padding: 8px 15px; /* Um pouco maior para destaque */
-    border-radius: 50px; /* Cantos totalmente arredondados */
-    font-size: 1.1em; /* Aumenta levemente o tamanho da fonte */
+    color: #FFD700;
+    background-color: #000;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 1.1em;
 }
 
 /* Hover do menu */
 nav ul li a:hover {
-    background-color: #333; /* Leve efeito ao passar o mouse */
+    background-color: #333;
+}
+
+/* Bolinhas pulsantes nos links do menu */
+nav ul li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700; /* amarelo */
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: pulse 1.5s infinite;
+}
+
+/* Animação pulsante */
+@keyframes pulse {
+    0% { transform: translateY(-50%) scale(1); opacity: 1; }
+    50% { transform: translateY(-50%) scale(1.5); opacity: 0.7; }
+    100% { transform: translateY(-50%) scale(1); opacity: 1; }
 }
 
 /* Seções */
 section, article {
-    background-color: #003366; /* Azul mais escuro */
-    color: #fff; /* Letra branca para contraste */
-    padding: 20px;
+    background-color: #003366;
+    color: #fff;
+    padding: 15px;
     margin: 10px auto;
     max-width: 1000px;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
-/* Títulos das seções */
 section h2, article h2, section h3, article h3 {
-    color: #FFD700; /* Amarelo */
+    color: #FFD700;
 }
 
-/* Links dentro das seções */
 section a, article a {
-    display: inline-block; /* Faz o link ter seu próprio bloco */
-    margin-top: 10px; /* Distância do texto acima */
-    color: #FFD700; /* Amarelo */
-    background-color: #000; /* Fundo preto */
-    padding: 10px 20px; /* Maior para destaque */
-    border-radius: 50px; /* Cantos totalmente arredondados */
+    display: inline-block;
+    margin-top: 10px;
+    color: #FFD700;
+    background-color: #000;
+    padding: 10px 20px;
+    border-radius: 50px;
     text-decoration: none;
-    font-size: 1.2em; /* Um pouco maior */
+    font-size: 1.2em;
 }
 
-/* Hover dos links nas seções */
 section a:hover, article a:hover {
     background-color: #333;
 }
 
-/* Listas de profissões */
-ul.profissoes {
-    list-style: none; /* Remove bolinhas padrão */
+/* Listas do main (bolinhas amarelas normais) */
+main ul {
+    list-style: none;
+    padding-left: 25px;
+}
+
+main ul li {
+    position: relative;
+    margin-bottom: 10px;
     padding-left: 20px;
 }
 
-ul.profissoes li {
-    color: #fff;
-    position: relative;
-    padding-left: 25px; /* Espaço para a bolinha */
-}
-
-ul.profissoes li::before {
-    content: "●"; /* Bolinha */
-    color: black; /* Bolinha preta */
+main ul li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700;
+    border-radius: 50%;
     position: absolute;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Formulários */
 form {
-    max-width: 900px; /* Maior para preencher horizontalmente */
+    max-width: 1000px;
     margin: 20px auto;
-    background-color: #004080; /* Fundo azul escuro */
+    background-color: #004080;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 25px;
     color: #fff;
 }
 
@@ -113,7 +137,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: #FFD700; /* Amarelo */
+    color: #FFD700;
 }
 
 label {
@@ -129,25 +153,32 @@ input, select, textarea {
     border: 1px solid #ccc;
 }
 
+/* Alinhamento de radio buttons */
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* Botão enviar cadastro */
 button#enviarCadastro {
-    display: block;              /* Mantém o botão como bloco */
-    margin: 40px auto;           /* Centraliza e afasta do conteúdo acima */
-    background-color: #000;      /* Fundo preto */
-    color: #FFD700;              /* Letras amarelas */
-    padding: 20px 40px;          /* Tamanho maior para destaque */
-    border-radius: 50px;         /* Cantos totalmente arredondados */
-    border: none;                /* Remove borda padrão */
-    font-size: 1.5em;            /* Fonte maior */
-    font-weight: bold;           /* Destaque no texto */
-    text-align: center;          /* Centraliza o texto */
-    cursor: pointer;             /* Muda o cursor ao passar o mouse */
-    text-decoration: none;       /* Remove sublinhado se for link */
-    transition: background 0.3s; /* Suaviza efeito hover */
+    display: block;
+    margin: 40px auto;
+    background-color: #000;
+    color: #FFD700;
+    padding: 20px 40px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
 }
 
 button#enviarCadastro:hover {
-    background-color: #333;      /* Leve efeito escuro ao passar o mouse */
+    background-color: #333;
 }
 
 /* Rodapé */
@@ -159,7 +190,6 @@ footer {
     margin-top: 20px;
 }
 
-/* Link "Voltar ao topo" */
 footer a {
     color: #FFD700;
     background-color: #000;
